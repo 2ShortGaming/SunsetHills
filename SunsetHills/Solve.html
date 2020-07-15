@@ -29,6 +29,24 @@
         background-position: center;
         background-size: cover;
     }
+
+    .bldgCount {
+        font-weight: 800;
+        font-size: larger;
+    }
+
+        .btnStyle {
+            border:double; 
+            color:snow; 
+            margin-top:20px;
+            width: 20%;
+            
+        }
+
+        .txtStyle {
+            color:snow;
+            font-family:'Comic Sans MS';
+        }
     </style>
 </head>
 
@@ -55,7 +73,7 @@
                         <a class="nav-link" href="/Code.html">Code</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="https://github.com/2ShortGaming" target="_blank">Github</a>
+                        <a class="nav-link" href="https://github.com/2ShortGaming/SunsetHills" target="_blank">Github</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="https://swaney-portfolio-cf-trn.netlify.app" target="_blank">Portfolio</a>
@@ -82,19 +100,90 @@
         <div class="row">
             <div class="col-lg-12 text-center">
                 <h1 class="mt-5">Sunset Hills Exercise</h1>
-             
+
                 <ul class="list-unstyled">
                     <li>The Challenge</li>
-                    <li>Is placed on this page</li>
+                    <li>Enter in numbers into each column to see how many buildings can see the sunset!</li>
                 </ul>
             </div>
         </div>
     </div>
+    <div class="container">
+        <div class="row">
+            <div class="col"><input id="shIn1" class="form-control" placeholder="Number 1" /></div>
+            <div class="col"><input id="shIn2" class="form-control" placeholder="Number 2" /></div>
+            <div class="col"><input id="shIn3" class="form-control" placeholder="Number 3" /></div>
+            <div class="col"><input id="shIn4" class="form-control" placeholder="Number 4" /></div>
+            <div class="col"><input id="shIn5" class="form-control" placeholder="Number 5" /></div>
+            <div class="col"><input id="shIn6" class="form-control" placeholder="Number 6" /></div>
 
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-4"></div>
+        <div class="col" style="padding-left:2.5em">
+            <button id="shBtn" class="btn btn-dark btnStyle" style="margin-right:20px">Calculate</button>
+            <button id="btnClear" class="btn btn-dark btnStyle">Clear</button>
+        </div>
+
+    </div>
+    <div class="row txtStyle text-center" style="margin-top:20px">
+        <div class="col h4">
+            <p id="shOut"></p>
+        </div>
+    </div>
     <!-- Bootstrap core JavaScript -->
     <script src="//code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="//cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="//stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+
+    <script>$("#shBtn").on('click', function () {
+            //user input
+            let bldg1 = parseInt($("#shIn1").val());//3
+            let bldg2 = parseInt($("#shIn2").val());//2
+            let bldg3 = parseInt($("#shIn3").val());//4
+            let bldg4 = parseInt($("#shIn4").val());//7
+            let bldg5 = parseInt($("#shIn5").val());//6
+            let bldg6 = parseInt($("#shIn6").val());//9
+
+            //build array from user input
+            let bldgArray = [bldg1, bldg2, bldg3, bldg4, bldg5, bldg6];
+
+            //left most bldg will always see sunset
+            let output = new Array();
+            let tallest = 0;
+            let currentBldg = 0
+
+            for (let loop = 0; loop <= 5; loop++) {
+                currentBldg = bldgArray[loop];
+                //determine if the integer is smaller than any before me
+                if (currentBldg > tallest) {
+                    output.push(currentBldg);
+                    tallest = currentBldg;
+                }
+                //output to user
+
+                $("#shOut").html(`Given the input, ${output.length} buildings can see the sunset.
+                    <br />The buildings that can see the sunset are [${output.toString()}].`)
+
+
+            }
+
+        })
+        $("#btnClear").on("click", function () {
+            $("#shIn1, #shIn2, #shIn3, #shIn4, #shIn5, #shIn6").val("");
+            $("#shOut").text("");
+        })
+
+
+
+        
+
+    </script>
+
+
+
+
 
 </body>
 
