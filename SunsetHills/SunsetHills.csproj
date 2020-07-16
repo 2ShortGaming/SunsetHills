@@ -69,6 +69,7 @@
   <ItemGroup>
     <Content Include="Code.html" />
     <Content Include="css\prism.css" />
+    <Content Include="Images\compass.png" />
     <Content Include="Images\favicon\android-chrome-192x192.png" />
     <Content Include="Images\favicon\android-chrome-512x512.png" />
     <Content Include="Images\favicon\apple-touch-icon.png" />
