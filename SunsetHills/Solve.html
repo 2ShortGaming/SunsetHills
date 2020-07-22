@@ -25,6 +25,7 @@
     <link href="font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" />
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800' rel='stylesheet' type='text/css' id="Open">
     <link href='https://fonts.googleapis.com/css?family=Merriweather:400,300,700,900' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css" />
     <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
     <!-- Image Slider -->
     <link rel="stylesheet" href="css/plagin-css/owl.carousel.css">
@@ -72,7 +73,6 @@
 
         .txtStyle {
             color: snow;
-          
         }
 
         .overlay-color::before {
@@ -94,9 +94,10 @@
             width: 70%;
             margin: auto;
         }
+
         .bgd {
             background-color: #171717;
-            color:snow;
+            color: snow;
         }
     </style>
 </head>
@@ -163,15 +164,16 @@
     <div class="container Open" style="color:snow">
         <div class="row">
             <div class="col-lg-12 text-center">
-                <h1 class="mt-5">Sunset Hills Exercise</h1>
+                <h1 class="mt-5 animate__animated animate__rotateInDownLeft">Sunset Hills Exercise</h1>
 
                 <ul class="list-unstyled">
-                    <li>The Challenge</li>
+                    <li class="h3">The Challenge</li>
                     <li>Enter in numbers into each column to see how many buildings can see the sunset!</li>
                 </ul>
             </div>
         </div>
     </div>
+    <br />
     <div class="container">
         <div class="row">
             <div class="col"><input id="shIn1" class="form-control" placeholder="Number 1" /></div>
@@ -180,9 +182,9 @@
             <div class="col"><input id="shIn4" class="form-control" placeholder="Number 4" /></div>
             <div class="col"><input id="shIn5" class="form-control" placeholder="Number 5" /></div>
             <div class="col"><input id="shIn6" class="form-control" placeholder="Number 6" /></div>
-
         </div>
     </div>
+
     <div class="row">
         <div class="col-4"></div>
         <div class="col" style="padding-left:2.5em">
@@ -192,8 +194,8 @@
 
     </div>
     <div class="row txtStyle text-center" style="margin-top:20px">
-        <div class="col h4">
-            <p id="shOut"></p>
+        <div class="col">
+            <p id="shOut" class="h2" style="color:snow"></p>
         </div>
     </div>
     <br />
@@ -203,7 +205,6 @@
     <br />
     <br />
     <!-- Bootstrap core JavaScript -->
-    <script src="scripts/main.js"></script>
     <script src="scripts/plagin-js/jquery-1.11.3.js"></script>
     <script src="scripts/plagin-js/preloader.js"></script>
     <script src="scripts/plagin-js/plagin.js"></script>
@@ -212,9 +213,8 @@
     <!-- Custom Script
     ==========================================-->
     <script src="scripts/custom-scripts.js"></script>
-
     <script src="scripts/prism.js"></script>
-
+    <script src="scripts/main.js"></script>
 </body>
 
 </html>
